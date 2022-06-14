@@ -1,0 +1,47 @@
+apt install git
+git --version
+git config --global user.name "Ishita"
+git config --global user.email "ishitahaha@gmail.com"
+mkdir dirname
+cd dirname
+git init
+touch demofile1
+git status
+git add .
+git commit -m "First demo commit"
+git status
+git log
+git show commit_id
+git remote add origin url
+git push -u origin master
+
+TO CREATE A BRANCH, MERGE & STASH:
+
+git branch = list available branches
+git branch branch_name = create a new branch
+git checkout branch_name_you_want_to_go = to switch branch
+git branch -d branch_name = to delete branch
+git log --oneline = to list branch in oneline
+
+MERGE:
+
+git merge branch_name = to merge branches
+git log = to verify merge
+git push origin master = to push to central repo like github
+
+STASHING:
+
+git stash = to stash an item
+git stash list = to see stashed item list
+git stash apply stash@{0} = to apply stashed item
+git stash clear = to clear stash item
+
+GIT RESET:
+
+git reset filename = reset staging area file
+git reset =  reset staging area
+git reset --hard = to reset changes from both staging area and working directory at a time.
+
+REVERT:
+
+git revert commit_id = undo an existing commit
