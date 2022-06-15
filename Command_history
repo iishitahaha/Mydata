@@ -1,0 +1,29 @@
+  439  cd Desktop/
+  440  ll
+  441  mkdir Shell_Script
+  442  cd Shell_Script/
+  443  l
+  444  ll
+  445  git init 
+  446  git status 
+  447  git add.
+  448  git add .
+  449  ll
+  450  git commit -m "Demo Commit"
+  451  git status 
+  452  git remote -v
+  453  ll
+  454  git log
+  455  git remote add origin https://github.com/iishitahaha/ShellScript.git
+  456  git push -u origin HEAD 
+  457  git push -u origin main
+  458  git push -u origin master
+  459  touch demo1
+  460  git push -u origin master
+  461  git push -u origin HEAD 
+  462  git add .
+  463  git commit -m "Second Commit"
+  464  git push -u origin HEAD 
+  465  git status
+  466  history
+
