@@ -1,0 +1,70 @@
+---
+- hosts: mhost1
+  become: yes
+
+#VARIABLES SECTION:
+  vars:
+    username: iishitahaha
+    
+    #DICTIONARY VARIABLES:
+    dict:
+      firstname: Ishita
+      lastname: Mevada
+
+    #LIST VARIABLES:
+    list:
+      - Name
+      - Age
+      - Number
+
+    #COMPLEX VARIABLES:
+    complex:
+      - Name: Ishita
+        Age: 20
+      - Name: haha
+        Age: 19
+
+  vars_files:
+    - vars_file.yml
+
+  var_prompt:
+    - name: var
+      prompt: Enter a Variable name: 
+      private: no
+  
+    #CREATE A USER:
+    - name: username
+      prompt: Enter a Username: 
+      private: no
+
+  tasks:
+    - name: Display Variable"
+      debug:
+        msg: "{{ username }}"
+
+        msg: "{{ dict }}"
+        msg: "{{ dict.key1 }}"
+        msg: "{{ dict['key2'] }}"
+
+        msg: "{{ list }}"
+        msg: "{{ list[0] }}"
+
+        msg: "{{ complex }}"
+        msg: "{{ complex[0] }}"
+        msg: "{{ complex[0].Name }}"
+
+        msg: "{{ var }}"
+
+    - name: Create a user
+      user:
+        name: "{{ username }}"
+        state: present
+
+    - name: Display facts Variables
+      debug:
+        msg: "{{ ansible_facts }}"
+        msg: "{{ ansible_facts.all_ipv4_addresses }}"
+        msg: "{{ ansible_facts.all_ipv4_addresses[0] }}"
+
+
+...

@@ -1,0 +1,7 @@
+---
+- hosts: mhost1
+  become: true
+  tasks:
+    - name: Display facts Variables
+
+  ansible mhost1 -m setup

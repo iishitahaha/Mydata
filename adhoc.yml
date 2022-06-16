@@ -1,0 +1,14 @@
+#Syntax:
+#ansible [pattern] -m [module] -a "[module options]"
+
+#Examples:
+ansible mhost1 -m command -a "cat /etc/hosts"
+ansible mhost3 -m command -a "ls -l /tmp/test"
+
+ansible mhost2 -m file -a "path=/tmp/test state=touch"
+
+ansible mhost3 -b -m user -a "name=ansible state=present"
+
+ansible mhost4 -m copy -a "src=/etc/hosts dest=/tmp/hosts_bkp"
+
+
