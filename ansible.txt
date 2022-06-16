@@ -46,7 +46,14 @@ ansible.config file:
 		implicit = gather by default, can turn off with gather_facts: False
 		explicit = do not gather by default, must say gather_facts: True
 
+ANSIBLE MODULES:
+	
+-Some modules:
+	lineinfile = to make changes in specific line of a file.
+	repeat = to make chnages on multiple lines of a file.
+	seport = manages SELinux network port type definitions.
+	firewalld = this module allows for addition or deletion of services and ports (either tcp or udp) in either running or permanent firewalld rules.
 
+	
 
-		
 

@@ -1,0 +1,6 @@
+
+
+ansible mhost4 -m lineinfile -a "path=/etc/ssh/sshd_config regexp='^#Port' line='Port 22' state=present" -u root
+
+ansible mhost4 -m lineinfile -a "path=/etc/ssh/sshd_config regexp='^#Port' line='Port 555' state=present" -u root
+

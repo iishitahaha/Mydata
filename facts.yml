@@ -3,5 +3,10 @@
   become: true
   tasks:
     - name: Display facts Variables
+      debug:
+        msg: "{{ ansible_facts }}"
 
-  ansible mhost1 -m setup
+
+#COMMANDS:
+#ansible mhost1 -m setup -a "gather_subset=network" --become
+#ansible mhost1 -m setup -a "filter=ansible_devices" --become
