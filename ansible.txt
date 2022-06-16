@@ -1,0 +1,52 @@
+Ansible:
+	is an open-source IT automation tool development to configure multiple system, deploy software and orchestrate more advance IT task.
+	Written in YAML(Yet another Markup language).
+	
+Installation of machanies:
+	VM Name with IP:
+	ansible-c (controller)(192.168.99.1/24)
+	mhost1	(node1)(192.168.99.10/24)
+	mhost2	(node2)(192.168.99.20/24)
+	mhost3	(node3)(192.168.99.30/24)
+	mhost4	(node4)(192.168.99.40/24)
+
+Step1: Install the machines as per the above requirement.
+Step2: Hard disk, network: Internal network; name:ansible
+Step3: In ansible-c controller node go to vim /etc/hosts and enter entry of other nodes like below;
+	192.168.99.10	mhost1.example.com	mhost1
+	192.168.99.20	mhost2.example.com	mhost2
+	192.168.99.30	mhost3.example.com	mhost3
+	192.168.99.40	mhost4.example.com	mhost4
+
+Step4: Ping all the nodes from Controller machine.
+Step5: In ansible-c:
+	dnf repolist = to display available repo
+	dnf install epel-release
+
+
+
+ANSIBLE CONFIGURATION FILE:
+
+export ANSIBLE_CONFIG=/tmp/ansible.cfg = will change the ansible config file to this location
+ansible --version = here you can see the changed config file path
+touch ansible.cfg = create this two files in home directory
+touch .ansible.cfg	
+unset ANSIBLE_CONFIG = to unset the config file path
+ansible --version = you can see the changed config file path
+rm ansible.cfg = so when you delete one of the file and check the verison you can see the different config file path
+
+ansible.config file:
+	[Defaults]
+	inventory file = /etc/ansible/hosts
+	forks = 5 (means ansible can start 5 parallel connections to the nodes, 5 connection simultaneously)
+	remote_port = 22 (ssh port, by default ansible have ssh port)
+	
+	-plays will gather facts by default, which contain info about the remote system.
+		smart = gather by default, but dont regather if already gathered.
+		implicit = gather by default, can turn off with gather_facts: False
+		explicit = do not gather by default, must say gather_facts: True
+
+
+
+		
+
