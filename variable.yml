@@ -65,6 +65,7 @@
         msg: "{{ ansible_facts }}"
         msg: "{{ ansible_facts.all_ipv4_addresses }}"
         msg: "{{ ansible_facts.all_ipv4_addresses[0] }}"
+        msg: "{{ ansible_facts['nodename'] }}"
 
 
 ...
