@@ -1,0 +1,5 @@
+# some imp commands about Terraform:
+
+terraform plan -target=aws_eip.lb
+terraform apply -target=aws_eip.lb
+terraform destroy -target=aws_eip.lb
